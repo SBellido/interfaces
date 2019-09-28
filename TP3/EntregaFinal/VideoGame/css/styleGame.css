@@ -1,0 +1,355 @@
+/* GRAPHICAL ENVIRONMENT */
+.conteiner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    height: 625px;
+    width: 100%;
+}
+
+
+/* .containStarting {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    justify-content: center;
+    height: 936px;
+    width: 100%;
+} */
+
+/* .logoGame {
+    position: absolute;
+    width: 500px;
+    height: 338px;
+    top: 5%;
+    background: transparent url(../images/context/logoGame.png) no-repeat center;
+    z-index: 4;
+} */
+
+.hide {
+    visibility: hidden;
+}
+.show {
+    visibility: visible;
+}
+.messageError {
+    position: absolute;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    bottom: 5%;
+    z-index: 4;
+    color: white;   
+}
+
+.containGame {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* .playButton {
+    position: absolute;
+    width: 100%;
+    height: 100%;  
+    top: 45%;
+    background: transparent url(../images/context/playButton.png) no-repeat center;
+    z-index: 4;
+    transition: transform .5 linear; 
+}
+
+.playButtonOn:hover {
+    transform: scale(1.25);
+    opacity: .7;
+} */
+
+
+/* .playButtonOn {
+    transition: .3s;
+} */
+
+.startButton {
+    color: white;
+    visibility: visible;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    position: fixed;
+    z-index: 4;
+    background-color: rgb(0, 255, 0);
+    border: none;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 15px;
+    bottom: 10%;
+    left: 15%;
+} 
+
+.jumpButton {
+    color: white;
+    visibility: visible;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    position: fixed;
+    z-index: 4;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 15px;
+    bottom: 10%;
+    left: 15%;
+}
+
+.jumpButtonOn:hover {
+    transform: scale(1.25);
+    opacity: .7;
+}
+
+/* CHARACTER */
+.character{
+    display: absolute;
+    width: 185px;
+    height: 270px;
+    position: fixed;
+    bottom: 5%;
+    left: 27%;
+    background: url(../images/character/zombie.png) no-repeat left center;
+    z-index: 0;
+}
+
+/* 
+#characterRun{
+} */
+
+.characterRun {
+    display: flex;
+    width: 185px;
+    height: 270px;
+    position: absolute;
+    bottom: 5%;
+    left: 27%;
+    background: url(../images/character/runZombie.png) no-repeat left center;
+    animation: run 1s steps(5) infinite;
+    z-index: 0;
+}
+@keyframes run {
+    100% { background-position: -911px; }
+}
+
+
+.characterJump {
+    width: 185px;
+    height: 270px;
+    position: absolute;
+    bottom: 5%;
+    left: 27%;
+    background: url(../images/character/jumpZombie.png) no-repeat left center;
+    animation: jump 1.7s steps(7);
+    z-index: 0;
+
+}
+@keyframes jump {
+    0% { bottom: 5% }
+    20% { bottom: 5% }
+    25% { bottom: 10% }
+    50% { bottom: 20% }
+    75% { bottom: 10% }
+    80% { bottom: 5% }
+    100% { background-position: -1296px; 
+        bottom: 5% }
+} 
+
+/*
+.characterWalk {
+    display: flex;
+    width: 192px;
+    height: 350px;
+    position: fixed;
+    bottom: 5%;
+    left: 33%;
+    background: url(../images/character/walkZombieMAX.png) no-repeat left center;
+    animation: walk 1.5s steps(6) infinite;
+    z-index: 0;
+}
+@keyframes walk {
+    100% { background-position: -1159px; }
+} */
+
+.characterDead {
+    display: none;
+    width: 246px;
+    height: 215px;
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+    background: url(../images/character/deadZombie.png) no-repeat left center;
+    animation: dead 1.5s steps(13) infinite;
+    z-index: 0;
+}
+@keyframes dead {
+    100% { background-position: -3196px; }
+}
+ 
+
+.characterDown {
+    display: none;
+    width: 206px;
+    height: 214px;
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+    background: url(../images/character/headDownZombie.png) no-repeat left center;
+    animation: down 1.5s steps(5) infinite;
+    z-index: 0;
+}
+@keyframes down {
+    100% { background-position: -1030px; }
+}
+/*OBSTACLES*/
+
+
+@keyframes obstacle {
+    from {transform: translate(1286px, 0px)}
+    to {transform: translate(-1286px, 0px)}
+}
+    
+.obstacleRock {
+    width: 100px;
+    height: 64px;
+    position: fixed;
+    bottom: 2%;
+    background: transparent url(../images/obstacles/rock.png) no-repeat right;
+    animation: obstacle 10s linear infinite;
+    z-index: 2;
+}     
+
+.obstacleThorn {
+    width: 100px;
+    height: 64px;
+    position: fixed;
+    bottom: 2%;
+    background: transparent url(../images/obstacles/thorn.png) no-repeat left;
+    animation: obstacle 8s linear infinite;
+    z-index: 2;
+}
+
+ .obstacleBomb {
+    width: 100px;
+    height: 64px;
+    position: fixed;
+    bottom: 2%; 
+    background: transparent url(../images/obstacles/bomb.png) no-repeat right center;
+    animation: obstacle 5s linear infinite;
+    z-index: 2;
+}
+
+/* @keyframes obstacle2 { 
+    100% { background-position: -100px; }
+} */
+
+/* BACKGROUND */
+.fog {
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    position: absolute;
+    background: transparent url(../images/background/fog.png) repeat left center;
+    animation: ground 90s linear infinite;
+    z-index: 3;
+}  
+
+@keyframes ground { 
+    100% { background-position: -1286px; }
+}
+.background {
+    width: 100%;
+    height: 100%;;
+    position: absolute;
+    background: url(../images/background/background.png) repeat left center;
+    background-size: cover;
+    z-index: -7; 
+}
+
+.background_L1 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent url(../images/background/background_L1.png) repeat left center;
+    animation: ground 12s linear infinite;
+    z-index: -2;
+}
+
+
+.background_L2 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent url(../images/background/background_L2.png) repeat left center;
+    animation: ground 35s linear infinite;
+    z-index: -3;
+}
+
+.background_L3 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent url(../images/background/background_L3.png) repeat left center;
+    animation: ground 50s linear infinite;
+    z-index: -4;
+}
+
+.background_L4 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent url(../images/background/background_L4.png) repeat left center;
+    animation: ground 75s linear infinite;
+    z-index: -5;
+}
+
+/* .fogGreen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.8;
+    background: transparent url(../images/background/_PNG/fogGreen1.png) repeat left center;
+    animation: ground 70s linear infinite;
+    z-index: 0;
+}
+
+@keyframes ground { 
+    100% { background-position: -1990px; } 
+} */
+
+/* .background_L6 {
+    opacity: .3;
+    display:;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent url(../images/background/_PNG/background_6.png) repeat center center;
+    animation: ground 53s linear infinite;
+    z-index: -7;
+} */
+
+/* .background_L5 {
+    opacity: .5;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent url(../images/background/_PNG/background_5.png) repeat left center;
+    animation: ground 50s linear infinite;
+    z-index: -6;
+} 
+ */
+

@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="css/estilo.css">
+<title>TP1 - Interfaces</title>
+<link rel="icon" type="image/png" href="images/faviconSB.png" /></head>
+<body>
+    <header class="header">  
+        <nav class="navbar-expand-lg fixed-top">
+            <ul class="nav justify-content-center">
+                <li>
+                    <span class="nav-link">
+                        <a href="#TP1">Interfaces de Usuario e Interacción</a>
+                    </span> 
+                </li>      
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                        TP1 - Ejercicios
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#ej_1">E.1</a>
+                        <a class="dropdown-item" href="#ej_2">E.2</a>
+                        <a class="dropdown-item" href="#ej_3">E.3</a>
+                        <a class="dropdown-item" href="#ej_4">E.4</a>
+                        <a class="dropdown-item" href="#ej_5">E.5</a>
+                        <a class="dropdown-item" href="#ej_6">E.6</a>                     
+                    </div>
+                </li>
+            </ul>            
+        </nav>
+    </header>
+    <section>
+        <div class="container">            
+            <br id="TP1"><br><hr><br>
+            <h1>Práctico 1: Manejo de Colores</h1>
+            <p>Alumno: Sebastián Bellido
+            <br>Docentes: Cristian García Bauza, Marcos Lazo, Javier Romero, Fabricio Defelippe</p>
+        </div>
+    </section>   
+    <section id="ej_1">
+        <div class="container">
+            <br><br><hr><br>
+            <div class="card mb-3 card" style="max-width: 870px;">
+                <div class="row no-gutters">              
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <h5 class="card-title" id="ej_1">Ejercicio 1</h5>
+                            <p class="card-text">Repaso Javascript: 
+                                <br>a) Escribir una función que retorne el valor máximo de toda la matriz 
+                                <br>b) Escribir una función que retorne el valor máximo contenido en las filas pares y el valor mínimo en las filas impares 
+                                <br>c) Calcular el valor promedio de cada fila y guardarlos en un arreglo.</p>
+                            <p class="card-text"><small class="text-muted">Para visualizar el resultado de este ejercicio debe presionar F12.<br>Luego hacer clik en la pestaña "Console".</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="ej_2">
+        <div class="container">
+            <br><br><hr><br>
+            <div class="card mb-3 card" style="max-width: 330px;">
+                <div class="row no-gutters">              
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <h5 class="card-title">Ejercicio 2</h5>
+                            <p class="card-text">Pintar una región rectangular de un color utilizando el Contexto de HTML5.</p>
+                        </div>
+                    </div>                  
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h5 class="card-title">Solución</h5>
+            <canvas class="canvas" id="miCanvas_Ej-2" width="330" height="330" ></canvas><br>
+        </div>
+        <div class="container codExample">
+            <p class="codExample">let canvas = document.getElementById ( "miCanvas" )
+            <br>let ctx = canvas.getContext ( "2d" ) 
+            <br>let width = canvas.width
+            <br>let height = canvas.height
+            <br>
+            <br>ctx.beginPath(); 
+            <br>ctx.fillStyle = 'rgba ( 10, 100, 40, 0.6 )'
+            <br>ctx.fillRect ( 0, 0, width, height )
+            <br>ctx.stroke()
+            </p>
+        </div>
+    </section>
+    <section id="ej_3">
+        <div class="container">
+            <br><br><hr><br>
+            <div class="card mb-3 card" style="max-width: 330px;">
+                <div class="row no-gutters">              
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <h5 class="card-title" >Ejercicio 3</h5>
+                            <p class="card-text">Pintar una región rectangular de un color utilizando la estructura de ImageData.</p>
+                        </div>
+                    </div>                  
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h5 class="card-title">Solución</h5>
+            <canvas id="miCanvas_Ej-3" width="330" height="330"></canvas>
+        </div>
+        <div class="container">
+            <p class="codExample">
+                <br>let imageData = ctx.createImageData ( width, height )
+                <br>ctx.putImageData ( imageData, x, y ) * 4
+                <br>
+                <br>function drawRect ( imageData, x, y, red, green, blue, alpha ) {
+                <br>&nbsp for ( let w = 0; w < width; w ++ ) { 
+                <br>&nbsp &nbsp for ( let h = 0; h < height; h ++ ) {
+                <br>&nbsp &nbsp &nbsp setPixel ( imageData, x, y, red, green, blue, alpha ) 
+                <br>&nbsp &nbsp }
+                <br>&nbsp }
+                <br>}
+                <br>
+                <br>function setPixel ( imageData, x, y, red, green, bue, alpha ) {
+                <br>&nbsp let index = ( x + y * imageData.height ) * 4;
+                <br>&nbsp imageData.data[index + 0] = 20
+                <br>&nbsp imageData.data[index + 1] = 150
+                <br>&nbsp imageData.data[index + 2] = 210
+                <br>&nbsp imageData.data[index + 3] = 150
+                <br>} 
+                
+            </p>
+        </div>
+    </section>
+    <section id="ej_4">
+        <div class="container">
+            <br><br><hr><br>
+            <div class="card mb-3 card" style="max-width: 330px;">
+                <div class="row no-gutters">              
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <h5 class="card-title" >Ejercicio 4</h5>
+                            <p class="card-text">Especificar la función para pintar un rectángulo utilizando un gradiente vertical de negro a blanco:</p>
+                        </div>
+                    </div>                  
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h5 class="card-title">Solución</h5>
+            <canvas id="miCanvas_Ej-4" width="330" height="330" ></canvas>
+            <p class="codExample">
+                <br>ctx.putImageData ( imageData, x, y ) * 4
+                <br>
+                <br>function drawRect ( imageData, alpha ) {
+                <br>&nbsp for ( let w = 0; w < width; w ++ ) { 
+                <br>&nbsp &nbsp for ( let h = 0; h < height; h ++ ) {
+                <br>&nbsp &nbsp &nbsp let color = h * 255 / ( height - 1)
+                <br>&nbsp &nbsp &nbsp setPixel ( imageData, w, h, color, color, color, 255 ) 
+                <br>&nbsp &nbsp }
+                <br>&nbsp }
+                <br>}
+                
+            </p>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <br id="ej_5"><br><hr><br>
+            <div class="card mb-3 card" style="max-width: 330px;">
+                <div class="row no-gutters">              
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <h5 class="card-title">Ejercicio 5</h5>
+                            <p class="card-text">Pintar un rectángulo en pantalla, utilizando un gradiente que vaya de negro a amarillo en la primera
+                                    mitad del ancho del rectángulo, y de amarillo a rojo, en la segunda mitad. Por otro lado, en Y el
+                                    degrade se mantiene constante.</p>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h5 class="card-title">Solución</h5>
+            <canvas id="miCanvas_Ej-5" width="330" height="330"></canvas>
+            <p class="codExample">
+                <br>function gradient_Black_Yellow_Red ( imageData, b, a ) {
+                <br>&nbsp for ( let h = 0; h < height; h ++ ) {
+                <br>&nbsp &nbsp for ( let w = 0; w <= width / 2; w ++ ) {
+                <br>&nbsp &nbsp &nbsp let color = upColor ( w, width )
+                <br>&nbsp &nbsp &nbsp setPixel ( imageData, w, h, color, color, b, a )            
+                <br>&nbsp &nbsp }
+                <br>&nbsp &nbsp let middle = width / 2
+                <br>&nbsp &nbsp for ( let w = width / 2; w <= width ; w ++ ) {
+                <br>&nbsp &nbsp &nbsp let color = upColor ( middle, width )
+                <br>&nbsp &nbsp &nbsp setPixel ( imageData, w, h, 255, color, b, a ) 
+                <br>&nbsp &nbsp &nbsp middle --            
+                <br>&nbsp &nbsp } 
+                <br>&nbsp } 
+                <br>}
+                <br>
+                <br>function upColor ( middle, width ) {
+                <br>&nbsp let c = middle * 255 / ( width / 2 ) 
+                <br>&nbsp return c;
+                <br>}
+            </p>
+        </div>
+    </section>
+    <section id="ej_6">
+        <div class="container">
+            <br><br><hr><br>
+            <div class="card mb-3 card" style="max-width: 330px;">
+                <div class="row no-gutters">              
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <h5 class="card-title">Ejercicio 6</h5>
+                            <p class="card-text">Cargar una Imagen desde disco o URL.<br>
+                                    a) Dibujar la imagen dentro del canvas.<br>
+                                    b) Implementar una función que aplique el filtro de escala de grises y muestre el resultado en el
+                                    canvas.
+                            </p>
+                            <p class="card-text"><small class="text-muted">Solo funciona en Internet Explorer.</small></p>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div>
+                <h5 class="card-title">Solución</h5>
+                <canvas id="miCanvas_Ej-6" width="320" height="320" ></canvas>
+            </div>
+            <div>
+                <input type="button" value="Versión Grises" id="buttonGrayScale">
+                <input type="button" value="Versión Color " id="buttonColour">
+               <!--  <input type="button" value="Alert" id="prueba"> -->
+
+            </div>
+            <p class="codExample">
+            <br>buttonColour.onclick = function() { colourVersion ( picture ) }
+            <br>buttonGrayScale.onclick = function() { grayVersion ( picture ) }
+            <br>
+            <br>function colourVersion ( picture ) {
+            <br>&nbsp picture.src = "images/wom.jpg"
+            <br>&nbsp picture.onload = function() {
+            <br>&nbsp &nbsp CallDrawImageMethod ( this )
+            <br>&nbsp }
+            <br>}
+            <br>
+            <br>function grayVersion() {
+            <br>&nbsp picture.src = "images/wom.jpg"
+            <br>&nbsp picture.onload = function() {
+            <br>&nbsp &nbsp ctx.drawImage(picture, 0, 0)
+            <br>&nbsp &nbsp imageData = ctx.getImageData ( 0, 0, this.width, this.height )
+            <br>&nbsp &nbsp for ( var h = 0; h < height; h ++ ) {
+            <br>&nbsp &nbsp &nbsp for ( var w = 0; w < width; w ++ ) {
+            <br>&nbsp &nbsp &nbsp &nbsp setPixel ( imageData, h, w, 255 )
+            <br>&nbsp &nbsp &nbsp &nbsp }
+            <br>&nbsp &nbsp &nbsp }
+            <br>&nbsp &nbsp ctx_6.putImageData ( imageData, 0, 0 )
+            <br>&nbsp }
+            <br>}
+            <br>
+            <br>function setPixel ( imageData, x, y, a ) {
+            <br>&nbsp let indice = ( x + y * imageData.width ) * 4
+            <br>&nbsp imageData.data[indice + 3] = a
+            <br>&nbsp let r = getRed ( imageData, x, y )
+            <br>&nbsp let g = getGreen( imageData, x, y )
+            <br>&nbsp let b = getBlue ( imageData, x, y )
+            <br>&nbsp let averaGray = generateAverageGray ( r, g, b )
+            <br>&nbsp imageData.data[indice + 0] = averaGray
+            <br>&nbsp imageData.data[indice + 1] = averaGray
+            <br>&nbsp imageData.data[indice + 2] = averaGray
+            <br>}
+            </p>
+        </div>
+    </section>
+        
+    <footer class="navbar-expand-lg">
+        <div class="container">
+            <div>
+                <img src="images/logoSB.png" width="50" alt="">
+                    <a id="sbSitio">Sebastián Bellido / UniCen / FCE / TUDAI / Interfaces de Usuario e Interacción 2019</a>
+                </img>
+            </div> 
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Script TRABAJO PRÄCTICO -->
+    <script src="js/tp1-e1.js"></script>
+    <script src="js/tp1-e2.js"></script>
+    <script src="js/tp1-e3.js"></script>
+    <script src="js/tp1-e4.js"></script>
+    <script src="js/tp1-e5.js"></script>
+    <script src="js/tp1-e6.js"></script>
+
+
+</body>
+</html>

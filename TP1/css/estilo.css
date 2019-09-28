@@ -1,0 +1,34 @@
+nav {
+    background-color: rgb(52,79,97);
+    padding: 35px;
+}
+
+h1, h2 {
+    margin-top: 100px;
+}
+
+#buttonGrayScale, #buttonColour {
+    padding: 25px;
+    background-color: rgba(255, 170, 154, 1);
+}
+
+a, span, .nav-link {
+    color:white;
+    text-decoration: none;
+}
+
+a:hover { 
+    color: rgba(255, 170, 154, 1);
+}
+
+footer {
+    padding: 45px;
+    margin-top: 100px;
+    background-color: rgba(255, 170, 154, 1);
+}
+canvas {
+    margin-bottom: 25px;
+}
+.codExample {
+color: orangered;
+}

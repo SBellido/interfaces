@@ -1,0 +1,33 @@
+nav {
+    background-color:#6c4c75;
+    padding: 35px;
+}
+
+h1, h2 {
+    margin-top: 100px;
+}
+
+#buttonGrayScale, #buttonColour, #buttonCloseFigure, #buttonCleanCanvas {
+    padding: 25px;
+    background-color: rgba(255, 170, 154, 1);
+    margin:1px;
+}
+
+a, span, .nav-link {
+    color:white;
+    text-decoration: none;
+}
+
+a:hover { 
+    color: rgba(255, 170, 154, 1);
+}
+
+footer {
+    padding: 45px;
+    margin-top: 100px;
+    background-color: rgba(255, 170, 154, 1);
+}
+canvas {
+    margin-bottom: 25px;
+    border: 10px solid #6c4c75;
+}
