@@ -1,48 +1,80 @@
 class Game {
-    constructor() {
-        this.btnJump = document.getElementById('jumpButton')
+    constructor(btnStart,
+        btnJump,
+        background,
+        background_L1,
+        background_L2,
+        background_L3,
+        background_L4,
+        obstacleBomb,
+        obstacleRock,
+        obstacleThorn) {
+        this.state = 'over'
         this.character = new Character()
-        this.obstacleBomb = document.getElementById('obstacleBomb')
-        this.obstacleRock = document.getElementById('obstacleRock')
-        this.obstacleThorn = document.getElementById('obstacleThorn')
-
-        // this.obstacle = new Obstacle()
-        // this.audioPresent = document.getElementById("audioPresent");
-        // this.generateSecuenseObtacles()   
-        // this.transformNumbersInObstacles(number)
-        // this.showSecuenseRandomObstacles() 
-    }
-   
-    loopGame() {
-        this.inicialize()
-        
-        // this.btnJump.addEventListener('click', function() {          
-        // })
-    }
-        
-    captureEvent() {
-        console.log(this.character);     
-        this.character.jump()
-    }
-        
-        // playAudio() {
-        //     this.audioPresent.play();
-        // }
-    
-    inicialize() {
-        this.character.run()
-        this.btnJump.classList.add('jumpButton')       
-        this.obstacleBomb.className = 'obstacleBomb'
-        this.obstacleRock.className = 'obstacleRock'
-        this.obstacleThorn.className = 'obstacleThorn'
-        background_L1.className = 'background_L1'
-        background_L2.className = 'background_L2'
-        background_L3.className = 'background_L3'
-        background_L4.className = 'background_L4' 
-        btnStart.classList.add('hide')
-        background.classList.add('hide')     
+        this.obstacle = new Obstacle()
+        this.btnStart = btnStart
+        this.btnJump = btnJump
+        this.background = background
+        this.background_L1 = background_L1
+        this.background_L2 = background_L2
+        this.background_L3 = background_L3
+        this.background_L4 = background_L4
+        this.obstacleBomb = obstacleBomb
+        this.obstacleRock = obstacleRock
+        this.obstacleThorn = obstacleThorn
     }
 
+    // setStart() {
+    //     this.state = 'play'
+    //     this.background.className = 'background'
+    //     this.character.className = 'character'
+    // }
+
+    // loopGame() {
+    //     this.inicialize()
+    // }
+
+    // inicialize() {
+
+
+    // }
+
+    // startGame() {
+    //     this.btnJump.classList.add('jumpButton')
+    //     this.obstacleBomb.className = 'obstacleBomb'
+    //     this.obstacleRock.className = 'obstacleRock'
+    //     this.obstacleThorn.className = 'obstacleThorn'
+    //     this.background_L1.className = 'background_L1'
+    //     this.background_L2.className = 'background_L2'
+    //     this.background_L3.className = 'background_L3'
+    //     this.background_L4.className = 'background_L4'
+    //     this.btnStart.classList.add('hide')
+    //     this.background.classList.add('hide')
+    //     this.background.classList.add('hiden')
+    //         // this.loopGame()
+
+    //     this.character.run()
+
+    // }
+
+
+
+    // captureEvent() {
+    //     this.btnJump.onclick = jumpCharacter
+    //     this.character.jump()
+
+    // }
+
+
+
+
+
+    // colision() {
+    //         console.log(this.obstacle.getRock())
+    //     }
+    // playAudio() {
+    //     this.audioPresent.play();
+    // }
     // showSecuenseRandomObstacles() {
     //     this.secuense = new Array(10).fill(0).map(n => Math.floor(Math.random() * 3 + 1))
     // }  

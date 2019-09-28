@@ -1,14 +1,14 @@
 class Character {
     constructor() {
-        
-        this.lives = [3]
         this.state = 'run'
         this.character = document.getElementById('character')
         this.height = character.offsetHeight
         this.width = character.offsetWidth
     }
 
-    run(){
+    run() {
+        console.log(this.width);
+
         this.character.className = 'characterRun'
     }
 
