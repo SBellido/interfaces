@@ -23,7 +23,7 @@
     const obstacleThorn = document.getElementById('obstacleThorn')
 
     btnStart.onclick = startGame
-    btnJump.onclick = game.jumpCharacter
+    btnJump.onclick = detectedEvent
 
     function loadedGame() {
         game.setGame()        
@@ -33,3 +33,6 @@
         game.loopGame()
     }
     
+    function detectedEvent() {
+        game.jumpCharacter()
+    }

@@ -15,7 +15,9 @@ class Game {
         this.startGame()
     }
 
-    
+    jumpCharacter() {
+        this.character.jump()
+    }
 
     startGame() {
         this.character.run()
