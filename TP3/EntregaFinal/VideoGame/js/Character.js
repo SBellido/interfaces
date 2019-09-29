@@ -1,11 +1,13 @@
 class Character {
-    constructor() {
-        
-        this.lives = [3]
-        this.state = 'run'
+    constructor() {       
         this.character = document.getElementById('character')
-        this.height = character.offsetHeight
-        this.width = character.offsetWidth
+        // this.height = character.offsetHeight
+        // this.width = character.offsetWidth
+    }
+
+    
+    motionless() {
+        this.character.className = 'characterMotionless'
     }
 
     run(){

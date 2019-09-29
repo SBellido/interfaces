@@ -1,47 +1,40 @@
 class Game {
     constructor() {
-        this.btnJump = document.getElementById('jumpButton')
         this.character = new Character()
-        this.obstacleBomb = document.getElementById('obstacleBomb')
-        this.obstacleRock = document.getElementById('obstacleRock')
-        this.obstacleThorn = document.getElementById('obstacleThorn')
 
-        // this.obstacle = new Obstacle()
-        // this.audioPresent = document.getElementById("audioPresent");
-        // this.generateSecuenseObtacles()   
-        // this.transformNumbersInObstacles(number)
-        // this.showSecuenseRandomObstacles() 
     }
-   
+
+    setGame() {
+        this.character.motionless()
+        background.className = 'backgroundMotionless'
+        fog.className = 'fog'
+        fogGreen.className = 'fogGreen'
+    }
+
     loopGame() {
-        this.inicialize()
-        
-        // this.btnJump.addEventListener('click', function() {          
-        // })
+        this.startGame()
     }
-        
-    captureEvent() {
-        console.log(this.character);     
-        this.character.jump()
-    }
-        
-        // playAudio() {
-        //     this.audioPresent.play();
-        // }
+
     
-    inicialize() {
+
+    startGame() {
         this.character.run()
-        this.btnJump.classList.add('jumpButton')       
-        this.obstacleBomb.className = 'obstacleBomb'
-        this.obstacleRock.className = 'obstacleRock'
-        this.obstacleThorn.className = 'obstacleThorn'
+        btnJump.classList.add('jumpButton')       
+        obstacleBomb.className = 'obstacleBomb'
+        obstacleRock.className = 'obstacleRock'
+        obstacleThorn.className = 'obstacleThorn'
         background_L1.className = 'background_L1'
         background_L2.className = 'background_L2'
         background_L3.className = 'background_L3'
         background_L4.className = 'background_L4' 
+        background_L5.className = 'background_L5' 
+        background_L6.className = 'background_L6' 
         btnStart.classList.add('hide')
-        background.classList.add('hide')     
+        background.classList.add('hide')
+        
     }
+        
+
 
     // showSecuenseRandomObstacles() {
     //     this.secuense = new Array(10).fill(0).map(n => Math.floor(Math.random() * 3 + 1))
