@@ -5,7 +5,6 @@
     window.onload = loadedGame
 
     const btnStart = document.getElementById('startButton')
-    const btnJump = document.getElementById('jumpButton')
 
     const fog = document.getElementById('fog')
     const fogGreen = document.getElementById('fogGreen')
@@ -21,12 +20,24 @@
     const obstacleBomb = document.getElementById('obstacleBomb')
     const obstacleRock = document.getElementById('obstacleRock')
     const obstacleThorn = document.getElementById('obstacleThorn')
-
+    
+    let space = false
     btnStart.onclick = startGame
-    btnJump.onclick = detectedEvent
+
+    
+    // document.addEventListener('keydown', function(evt) {
+    //     if (evt.keyCode == 32) {
+    //         detectedEvent()
+    //         space = true
+    //         console.log('space');
+            
+    //     }
+    // })
 
     function loadedGame() {
-        game.setGame()        
+        game.setGame()
+        
+        document.onkeydown = detectedEvent       
     }
 
     function startGame() {

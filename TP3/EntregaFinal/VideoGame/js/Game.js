@@ -21,7 +21,6 @@ class Game {
 
     startGame() {
         this.character.run()
-        btnJump.classList.add('jumpButton')       
         obstacleBomb.className = 'obstacleBomb'
         obstacleRock.className = 'obstacleRock'
         obstacleThorn.className = 'obstacleThorn'
@@ -31,9 +30,8 @@ class Game {
         background_L4.className = 'background_L4' 
         background_L5.className = 'background_L5' 
         background_L6.className = 'background_L6' 
-        btnStart.classList.add('hide')
-        background.classList.add('hide')
-        
+        btnStart.className = 'hide'
+        background.className = 'hide'     
     }
         
 
