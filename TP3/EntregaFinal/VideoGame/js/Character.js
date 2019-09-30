@@ -1,6 +1,7 @@
 class Character {
     constructor() {       
         this.character = document.getElementById('character')
+        this.state = 'run'
         // this.height = character.offsetHeight
         // this.width = character.offsetWidth
     }
@@ -11,12 +12,14 @@ class Character {
     }
 
     run(){
+        this.character.state = 'run'
         this.character.className = 'characterRun'
     }
     
 
     // Code for Chrome, Safari and Opera
     jump() {
+        this.character.state = 'jump'
         this.character.classList = 'characterJump'
         setTimeout(this.run, 1700)
     }

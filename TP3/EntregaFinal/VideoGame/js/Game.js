@@ -15,16 +15,15 @@ class Game {
     setGameOver() {
         logoGame.style.visibility = 'hidden'
         gameOver.className = 'gameOver'
-        background.className = 'backgroundMotionless'       
+        background.className = 'backgroundMotionless'  
     }
 
     showObstacles() {
-        this.obstacle.showRock()
+        this.obstacle.showAllObstacles()
     }
 
     loopGame() {
-        this.startGame()
-        this.showObstacles()      
+        this.inicializeGame()
     }
     
 
@@ -37,7 +36,7 @@ class Game {
         
     }
 
-    startGame() {
+    inicializeGame() {
         this.character.run()
         background_L1.className = 'background_L1'
         background_L2.className = 'background_L2'
@@ -50,12 +49,15 @@ class Game {
         gameOver.className = 'hide'
         logoGame.style.visibility = 'visible'
         btnKill.style.visibility = 'visible'
+        this.showObstacles()      
     }
 
     gameOver() {
         this.character.dead()
         btnStart.className = 'startButton'
-        this.obstacle.hide()
+        btnStart.classList.add('startButtonOn')
+        btnKill.style.visibility = 'hidden'
+        this.obstacle.hideAllObstacles()     
         setTimeout(this.setGameOver(), 4000)
     } 
    

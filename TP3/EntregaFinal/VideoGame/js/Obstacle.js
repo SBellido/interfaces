@@ -3,29 +3,49 @@ class Obstacle {
         this.rock = document.getElementById('obstacleRock')
         this.bomb = document.getElementById('obstacleBomb')
         this.thorn = document.getElementById('obstacleThorn')
+        this.obstacles = new Array()
+        this.pushObstacles()
+       }
+
+       pushObstacles() {
+        this.obstacles.push(this.rock)
+        this.obstacles.push(this.bomb)
+        this.obstacles.push(this.thorn)
+       }
+
+    showAllObstacles() {
+        for (let i = 0; i < this.obstacles.length; i++) {
+            const obst = this.obstacles[i]
+            if(obst == this.rock) {
+                this.rock.className = 'obstacleRock'
+                console.log(obst);
+            } else if (obst == this.bomb) {
+                this.bomb.className = 'obstacleBomb'
+                console.log(obst);
+            } else {
+                this.thorn.className = 'obstacleThorn'
+                console.log(obst);
+            }           
+        }
+        console.log(this.obstacles)        
     }
 
-    // showThorn() {
-    //     this.thorn.classList.add('obstacleThorn')
-    //     // setInterval(this.showRock(), 3000)
-    //     showBomb()
-    // }
-
-    // showBomb() {
-    //     this.bomb.classList.add('obstacleBomb') 
-    //     // setInterval(this.showThorn(), 5000)
-    //     showRock()
-    // }
-
-    showRock() {
-        this.rock.classList.add('obstacleRock')
-        // setInterval(this.showRock(), 5000)   
-        // showThorn()  
+    hideAllObstacles(){
+        for (let i = 0; i < this.obstacles.length; i++) {
+            const obst = this.obstacles[i]
+            if(obst == this.rock) {
+                this.rock.className = 'hide'
+                console.log(obst);
+            } else if (obst == this.bomb) {
+                this.bomb.className = 'hide'
+                console.log(obst);
+            } else {
+                this.thorn.className = 'hide'
+                console.log(obst);
+            }           
+        }
     }
-
- hide(){
-     this.rock.className = 'hide'
- }
+    
 
     getPositionObstacle() {
 
