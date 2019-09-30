@@ -12,7 +12,7 @@ class Game {
     }
     
     showObstacles() {
-        this.obstacle.show()
+        this.obstacle.showRock()
     }
 
     loopGame() {
@@ -39,9 +39,15 @@ class Game {
         background_L5.className = 'background_L5' 
         background_L6.className = 'background_L6' 
         btnStart.className = 'hide'
-        background.className = 'hide'     
+        background.className = 'hide'
+        btnKill.style.visibility = 'visible'
     }
-        
+
+    gameOver() {
+        this.character.dead()
+        btnStart.className = 'startButton'
+        this.obstacle.hide()
+    } 
    
     // showSecuenseRandomObstacles() {
     //     this.secuense = new Array(10).fill(0).map(n => Math.floor(Math.random() * 3 + 1))

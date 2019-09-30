@@ -20,6 +20,10 @@ class Character {
         this.character.classList = 'characterJump'
         setTimeout(this.run, 1700)
     }
+
+    dead() {
+        this.character.classList = 'characterDead'
+    }
     // Standard syntax
     
     // jump() {

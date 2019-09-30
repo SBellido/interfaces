@@ -17,26 +17,18 @@ body {
 .containGame {
     height: 100%;
     width: 100%;
+    
 }
-/* 
-.containStarting {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    justify-content: center;
-    height: 936px;
-    width: 100%;
-} 
-*/
 
-/* .logoGame {
+.logoGame {
     position: absolute;
-    width: 500px;
-    height: 338px;
-    top: 5%;
+    width: 300px;
+    height: 203px;
+    top: 10%;
+    left: 37%;
     background: transparent url(../images/context/logoGame.png) no-repeat center;
     z-index: 4;
-} */
+}
 
 .hide {
     visibility: hidden;
@@ -53,66 +45,47 @@ body {
     color: white;   
 }
 
-/* .playButton {
-    position: absolute;
-    width: 100%;
-    height: 100%;  
-    top: 45%;
-    background: transparent url(../images/context/playButton.png) no-repeat center;
-    z-index: 4;
-    transition: transform .5 linear; 
-}
-
-.playButtonOn:hover {
-    transform: scale(1.25);
-    opacity: .7;
-} */
-
-
-/* .playButtonOn {
-    transition: .3s;
-} */
-
 .startButton {
-    color: white;
     visibility: visible;
-    width: 70px;
-    height: 70px;
+    width: 150px;
+    height: 150px;
     justify-content: center;
     position: absolute;
     z-index: 4;
-    background-color: rgb(0, 255, 0);
+    background: transparent url(../images/context/playButton.png) no-repeat center;
     border: none;
-    border-radius: 50%;
     font-weight: 500;
     font-size: 15px;
-    bottom: 10%;
-    left: 15%;
+    bottom: 45%;
+    left: 42%;
 } 
+
 .startButtonOn:hover {
     transform: scale(1.25);
     opacity: .7;
-    color: red;
+    /* color: red; */
 }
 
-.jumpButton {
-    color: white;
-    visibility: visible;
-    width: 50px;
-    height: 50px;
+.killButton {
+    visibility: hidden;
+    width: 150px;
+    height: 150px;
     justify-content: center;
     position: absolute;
     z-index: 4;
-    background-color: rgb(255, 0, 0);
+    background: transparent url(../images/context/killButton.png) no-repeat center;
     border: none;
-    border-radius: 50%;
     font-weight: 500;
     font-size: 15px;
-    bottom: 10%;
-    left: 15%;
+    bottom: 45%;
+    left: 42%;
 }
 
-
+.killButtonOn:hover {
+    transform: scale(1.25);
+    opacity: .7;
+    color: green;
+}
 
 /* CHARACTER */
 .characterMotionless{
@@ -168,6 +141,21 @@ body {
         bottom: 5% }
 } 
 
+.characterDead {
+    width: 270px;
+    height: 238px;
+    position: absolute;
+    bottom: 5%;
+    left: 20%;
+    background: url(../images/character/deadZombie.png) no-repeat left center;
+    animation: dead 1.1s steps(8);
+    z-index: 0;
+}
+@keyframes dead {
+    100% { animation: dead 1.1s;
+        background-position: -2183px; }
+}
+ 
 /*
 .characterWalk {
     display: flex;
@@ -184,21 +172,7 @@ body {
     100% { background-position: -1159px; }
 } */
 
-.characterDead {
-    display: none;
-    width: 246px;
-    height: 215px;
-    position: absolute;
-    bottom: 5%;
-    left: 20%;
-    background: url(../images/character/deadZombie.png) no-repeat left center;
-    animation: dead 1.5s steps(13) infinite;
-    z-index: 0;
-}
-@keyframes dead {
-    100% { background-position: -3196px; }
-}
- 
+
 
 .characterDown {
     display: none;
@@ -229,7 +203,7 @@ body {
     position: absolute;
     bottom: 5%;
     background: transparent url(../images/obstacles/rock.png) no-repeat right;
-    animation: obstacle 10s linear infinite;
+    animation: obstacle 17s linear infinite;
     z-index: 2;
 }     
 
@@ -239,7 +213,7 @@ body {
     position: absolute;
     bottom: 5%;
     background: transparent url(../images/obstacles/thorn.png) no-repeat left;
-    animation: obstacle 7s linear infinite;
+    animation: obstacle 10s linear infinite;
     z-index: 2;
 }
 
@@ -287,7 +261,7 @@ body {
     position: absolute;
     background: url(../images/background/pruebas/background.png);
     background-size: cover;
-    z-index: -7; 
+    z-index: -1; 
 }
 
 .background_L1 {

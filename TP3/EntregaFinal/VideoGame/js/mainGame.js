@@ -5,6 +5,7 @@
     window.onload = loadedGame
 
     const btnStart = document.getElementById('startButton')
+    const btnKill = document.getElementById('killButton')
 
     const fog = document.getElementById('fog')
     const fogGreen = document.getElementById('fogGreen')
@@ -23,7 +24,7 @@
     
     let space = false
     btnStart.onclick = startGame
-
+    btnKill.onclick = callGameOver
     
     document.addEventListener('keydown', function(evt) {
         if (evt.keyCode == 32) {
@@ -43,4 +44,7 @@
     
     function detectedEvent() {
         game.jumpCharacter()
+    }
+    function callGameOver() {
+        game.gameOver()
     }
