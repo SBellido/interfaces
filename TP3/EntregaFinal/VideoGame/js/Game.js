@@ -6,11 +6,18 @@ class Game {
 
     setGame() {
         this.character.motionless()
+        logoGame.className = 'logoGame'
         background.className = 'backgroundMotionless'
         fog.className = 'fog'
         fogGreen.className = 'fogGreen'
     }
     
+    setGameOver() {
+        logoGame.style.visibility = 'hidden'
+        gameOver.className = 'gameOver'
+        background.className = 'backgroundMotionless'       
+    }
+
     showObstacles() {
         this.obstacle.showRock()
     }
@@ -40,6 +47,8 @@ class Game {
         background_L6.className = 'background_L6' 
         btnStart.className = 'hide'
         background.className = 'hide'
+        gameOver.className = 'hide'
+        logoGame.style.visibility = 'visible'
         btnKill.style.visibility = 'visible'
     }
 
@@ -47,6 +56,7 @@ class Game {
         this.character.dead()
         btnStart.className = 'startButton'
         this.obstacle.hide()
+        setTimeout(this.setGameOver(), 4000)
     } 
    
     // showSecuenseRandomObstacles() {

@@ -9,7 +9,8 @@
 
     const fog = document.getElementById('fog')
     const fogGreen = document.getElementById('fogGreen')
-  
+    const gameOver = document.getElementById('GameOver')
+    const logoGame = document.getElementById('logoGame')
     const background = document.getElementById('background') 
     const background_L1 = document.getElementById('background_L1')
     const background_L2 = document.getElementById('background_L2')
@@ -17,8 +18,7 @@
     const background_L4 = document.getElementById('background_L4')
     const background_L5 = document.getElementById('background_L5')
     const background_L6 = document.getElementById('background_L6')
-
-    const obstacleBomb = document.getElementById('obstacleBomb')
+    const obstacleRock = document.getElementById('obstacleRock')
     // const obstacleRock = document.getElementById('obstacleRock')
     // const obstacleThorn = document.getElementById('obstacleThorn')
     
