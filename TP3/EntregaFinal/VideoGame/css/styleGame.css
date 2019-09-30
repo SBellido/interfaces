@@ -46,11 +46,13 @@ body {
 .show {
     visibility: visible;
 }
-.messageError {
+.text {
+    visibility: 'visible';
     position: absolute;
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    bottom: 5%;
+    bottom: 38%;
+    left: 39%;
     z-index: 4;
     color: white;   
 }
@@ -132,7 +134,7 @@ body {
     bottom: 5%;
     left: 20%;
     background: url(../images/character/jumpZombie.png) no-repeat left center;
-    animation: jump 1.7s steps(7);
+    animation: jump 1.9s steps(7);
     z-index: 0;
 
 }
@@ -194,9 +196,8 @@ body {
 @keyframes down {
     100% { background-position: -1030px; }
 }
+
 /*OBSTACLES*/
-
-
 @keyframes obstacle {
     from {transform: translate(1728px, 0px)}
     to {transform: translate(-1728px, 0px)}
@@ -204,6 +205,7 @@ body {
 
 
 .obstacleRock {
+    visibility: hidden;
     width: 100px;
     height: 64px;
     position: absolute;
@@ -214,6 +216,7 @@ body {
 }     
 
 .obstacleThorn {
+    visibility: hidden;
     width: 100px;
     height: 64px;
     position: absolute;
@@ -224,12 +227,13 @@ body {
 }
 
  .obstacleBomb {
+    visibility: hidden;
     width: 100px;
     height: 64px;
     position: absolute;
     bottom: 5%; 
     background: transparent url(../images/obstacles/bomb.png) no-repeat right center;
-    animation: obstacle 5s linear infinite;
+    animation: obstacle 7s linear infinite;
     z-index: 2;
 }
 

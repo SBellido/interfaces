@@ -6,11 +6,13 @@
 
     const btnStart = document.getElementById('startButton')
     const btnKill = document.getElementById('killButton')
+    const text = document.getElementById('text')
 
     const fog = document.getElementById('fog')
     const fogGreen = document.getElementById('fogGreen')
     const gameOver = document.getElementById('GameOver')
     const logoGame = document.getElementById('logoGame')
+
     const background = document.getElementById('background') 
     const background_L1 = document.getElementById('background_L1')
     const background_L2 = document.getElementById('background_L2')
@@ -33,6 +35,8 @@
         }
     })
 
+    
+
     function loadedGame() {
         game.setGame()        
         // document.onkeydown = detectedEvent
@@ -40,11 +44,13 @@
 
     function startGame() {
         game.loopGame()
+        setTimeout(game.getPositionObstacle(), 1900)
     }
     
     function detectedEvent() {
         game.jumpCharacter()
     }
+
     function callGameOver() {
         game.gameOver()
     }

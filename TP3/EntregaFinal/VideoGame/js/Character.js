@@ -23,7 +23,7 @@ class Character {
     jump() {
         this.character.state = 'jump'
         this.character.classList = 'characterJump'
-        setTimeout(this.run, 1700)
+        setTimeout(this.run, 1900)
     }
 
     dead() {

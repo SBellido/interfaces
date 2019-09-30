@@ -3,6 +3,14 @@ class Game {
     constructor() {
         this.character = new Character()
         this.obstacle = new Obstacle()
+        this.collision = false
+        // this.obstacles = new Array()
+        // this.pushObstacles()
+
+    }
+
+    getPositionObstacle() {
+        this.obstacle.getPosition()
     }
 
     setGame() {
@@ -11,30 +19,39 @@ class Game {
         background.className = 'backgroundMotionless'
         fog.className = 'fog'
         fogGreen.className = 'fogGreen'
+        text.className = 'text'
     }
     
     setGameOver() {
         logoGame.style.visibility = 'hidden'
         gameOver.className = 'gameOver'
-        background.className = 'backgroundMotionless'  
+        background.className = 'backgroundMotionless' 
+        text.style.visibility = 'visible'
     }
 
-    showObstacles() {
-        this.obstacle.showAllObstacles()
+    showObstacle() {
+        setTimeout(this.obstacle.show(), 1900) 
     }
 
     loopGame() {
         this.inicializeGame()
-        // this.detectedCollision()
+        this.showObstacle()
+        while(!this.collision) {
+            if(this.character.state == 'run') {
+                setTimeout(this.getPositionObstacle(), 17000)
+                if(this.getPositionObstacle() && this.character.state != 'jump' ) {
+                    this.collision = true
+                } else {
+                    this.collision = false 
+                }
+            }
+        }
+        return collision
     }
     
 
     jumpCharacter() {
         this.character.jump()
-        // this.character.addEventListener("webkitAnimationStart", this.character.jump());
-        // this.character.addEventListener("animationstart", this.character.jump());
-        // this.character.addEventListener("animationend", this.character.run());
-        // this.character.addEventListener("webkitAnimationEnd",  this.character.run());        
     }
 
     inicializeGame() {
@@ -48,14 +65,16 @@ class Game {
         btnStart.className = 'hide'
         background.className = 'hide'
         gameOver.className = 'hide'
+        text.style.visibility = 'hidden'
         logoGame.style.visibility = 'visible'
         btnKill.style.visibility = 'visible'
-        this.showObstacles()      
+        setTimeout(this.getPositionObstacle(), 1900)
+
     }
 
     detectedCollision() {
         this.state = this.character.getState()    
-        setTimeout(this.state , 1100)  
+          
     }
 
     gameOver() {
@@ -66,7 +85,30 @@ class Game {
         this.obstacle.hideAllObstacles()     
         setTimeout(this.setGameOver(), 4000)
     } 
-   
+
+    // pushObstacles() {
+    //     this.obstacles.push(this.obstacle.rock)
+    //     this.obstacles.push(this.obstacle.bomb)
+    //     this.obstacles.push(this.obstacle.thorn)
+    // }
+
+    // showAllObstacles() {
+    //     for (let i = 0; i < this.obstacles.length; i++) {
+    //         let obst = this.obstacles[i]
+    //         if(obst == this.obstacle.thorn) {
+    //             this.obstacle.className = 'obstacleThorn'
+    //             this.obstacle.show(obst)
+    //         } else if (obst == this.obstacle.bomb) {        
+    //             this.obstacle.className = 'obstacleBomb'
+    //             this.obstacle.show(obst)
+    //         }  else if (obst == this.obstacle.rock){
+    //             this.obstacle.className = 'obstacleRock'
+    //             this.obstacle.show(obst)
+    //         }
+    //     }           
+    //     console.log(this.obstacles)        
+    // }
+
     // showSecuenseRandomObstacles() {
     //     this.secuense = new Array(10).fill(0).map(n => Math.floor(Math.random() * 3 + 1))
     // }  
