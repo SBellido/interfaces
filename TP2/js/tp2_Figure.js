@@ -15,7 +15,6 @@ class Figura {
             vertex.set_ejeY(finalY)
         }
         
-        this.center = 
     }
 
     getPolygonCentroid() { 
