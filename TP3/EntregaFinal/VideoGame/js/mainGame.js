@@ -18,26 +18,23 @@
     const background_L6 = document.getElementById('background_L6')
 
     const obstacleBomb = document.getElementById('obstacleBomb')
-    const obstacleRock = document.getElementById('obstacleRock')
-    const obstacleThorn = document.getElementById('obstacleThorn')
+    // const obstacleRock = document.getElementById('obstacleRock')
+    // const obstacleThorn = document.getElementById('obstacleThorn')
     
     let space = false
     btnStart.onclick = startGame
 
     
-    // document.addEventListener('keydown', function(evt) {
-    //     if (evt.keyCode == 32) {
-    //         detectedEvent()
-    //         space = true
-    //         console.log('space');
-            
-    //     }
-    // })
+    document.addEventListener('keydown', function(evt) {
+        if (evt.keyCode == 32) {
+            detectedEvent()
+            space = true            
+        }
+    })
 
     function loadedGame() {
-        game.setGame()
-        
-        document.onkeydown = detectedEvent       
+        game.setGame()        
+        // document.onkeydown = detectedEvent
     }
 
     function startGame() {

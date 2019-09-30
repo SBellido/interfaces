@@ -1,7 +1,7 @@
 class Game {
     constructor() {
         this.character = new Character()
-
+        this.obstacle = new Obstacle()
     }
 
     setGame() {
@@ -10,20 +10,28 @@ class Game {
         fog.className = 'fog'
         fogGreen.className = 'fogGreen'
     }
+    
+    showObstacles() {
+        this.obstacle.show()
+    }
 
     loopGame() {
         this.startGame()
+        this.showObstacles()      
     }
+    
 
     jumpCharacter() {
         this.character.jump()
+        // this.character.addEventListener("webkitAnimationStart", this.character.jump());
+        // this.character.addEventListener("animationstart", this.character.jump());
+        // this.character.addEventListener("animationend", this.character.run());
+        // this.character.addEventListener("webkitAnimationEnd",  this.character.run());
+        
     }
 
     startGame() {
         this.character.run()
-        obstacleBomb.className = 'obstacleBomb'
-        obstacleRock.className = 'obstacleRock'
-        obstacleThorn.className = 'obstacleThorn'
         background_L1.className = 'background_L1'
         background_L2.className = 'background_L2'
         background_L3.className = 'background_L3'
@@ -34,8 +42,7 @@ class Game {
         background.className = 'hide'     
     }
         
-
-
+   
     // showSecuenseRandomObstacles() {
     //     this.secuense = new Array(10).fill(0).map(n => Math.floor(Math.random() * 3 + 1))
     // }  

@@ -76,8 +76,8 @@ body {
 .startButton {
     color: white;
     visibility: visible;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     justify-content: center;
     position: absolute;
     z-index: 4;
@@ -89,6 +89,11 @@ body {
     bottom: 10%;
     left: 15%;
 } 
+.startButtonOn:hover {
+    transform: scale(1.25);
+    opacity: .7;
+    color: red;
+}
 
 .jumpButton {
     color: white;
@@ -107,10 +112,7 @@ body {
     left: 15%;
 }
 
-.jumpButtonOn:hover {
-    transform: scale(1.25);
-    opacity: .7;
-}
+
 
 /* CHARACTER */
 .characterMotionless{
@@ -119,7 +121,7 @@ body {
     height: 270px;
     position: absolute;
     bottom: 5%;
-    left: 27%;
+    left: 20%;
     background: url(../images/character/zombie.png) no-repeat left center;
     z-index: 0;
 }
@@ -134,7 +136,7 @@ body {
     height: 270px;
     position: absolute;
     bottom: 5%;
-    left: 27%;
+    left: 20%;
     background: url(../images/character/runZombie.png) no-repeat left center;
     animation: run 1s steps(5) infinite;
     z-index: 0;
@@ -149,7 +151,7 @@ body {
     height: 270px;
     position: absolute;
     bottom: 5%;
-    left: 27%;
+    left: 20%;
     background: url(../images/character/jumpZombie.png) no-repeat left center;
     animation: jump 1.7s steps(7);
     z-index: 0;
@@ -188,7 +190,7 @@ body {
     height: 215px;
     position: absolute;
     bottom: 5%;
-    left: 30%;
+    left: 20%;
     background: url(../images/character/deadZombie.png) no-repeat left center;
     animation: dead 1.5s steps(13) infinite;
     z-index: 0;
@@ -219,7 +221,8 @@ body {
     from {transform: translate(1728px, 0px)}
     to {transform: translate(-1728px, 0px)}
 }
-    
+
+
 .obstacleRock {
     width: 100px;
     height: 64px;
@@ -255,18 +258,29 @@ body {
 } */
 
 /* BACKGROUND */
+@keyframes ground { 
+    100% { background-position: -1728px; }
+}
+
+.fogGreen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.8;
+    background: transparent url(../images/background/fogGreen.png) repeat left center;
+    animation: ground 70s linear infinite;
+    z-index: 0;
+}
+
 .fog {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: transparent url(../images/background/_PNG/fog2.png) repeat left center;
+    background: transparent url(../images/background/fog.png) repeat left center;
     animation: ground 90s linear infinite;
     z-index: 3;
 }  
 
-@keyframes ground { 
-    100% { background-position: -1728px; }
-}
 .backgroundMotionless {
     width: 100%;
     height: 100%;
@@ -340,22 +354,6 @@ body {
     background: transparent url(../images/background/pruebas/background_6.png);
     background-size: cover;
     z-index: -7;
-}
-
-
-
-.fogGreen {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0.8;
-    background: transparent url(../images/background/pruebas/fogGreen.png)repeat left center;
-    animation: ground 70s linear infinite;
-    z-index: 0;
-}
-
-@keyframes ground { 
-    100% { background-position: -1728px; } 
 }
 
 
