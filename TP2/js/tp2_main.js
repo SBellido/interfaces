@@ -61,7 +61,7 @@ canvas_TP2.addEventListener ("mousemove", function(evt) {
     let y = mousePos.y
     distanceX = x - start_Y
     distanceY = y - start_X
-    fig.dragFigure(distanceX, distanceY)
+    // fig.dragFigure(distanceX, distanceY)
 
 });
 
