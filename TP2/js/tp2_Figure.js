@@ -6,17 +6,15 @@ class Figura {
        // this.moveFigure()     
     }
 
-    dragFigure(distanceX, distanceY) {
-        for (let i = 0; i < vertices.length; i++) {
-            const vertex = vertices[i];
-            let finalX = vertex.get_ejeX + distanceX
-            vertex.set_ejeX(finalX)
-            let finalY = vertex.get_ejeY + distanceY
-            vertex.set_ejeY(finalY)
-        }
-        
-        this.center = 
-    }
+    // dragFigure(distanceX, distanceY) {
+    //     for (let i = 0; i < vertices.length; i++) {
+    //         const vertex = vertices[i];
+    //         let finalX = vertex.get_ejeX + distanceX
+    //         vertex.set_ejeX(finalX)
+    //         let finalY = vertex.get_ejeY + distanceY
+    //         vertex.set_ejeY(finalY)
+    //     }
+    // }
 
     getPolygonCentroid() { 
         let centroid = { x: 0, y: 0 } 

@@ -1,4 +1,5 @@
 class Game {
+
     constructor() {
         this.character = new Character()
         this.obstacle = new Obstacle()
@@ -24,6 +25,7 @@ class Game {
 
     loopGame() {
         this.inicializeGame()
+        // this.detectedCollision()
     }
     
 
@@ -32,8 +34,7 @@ class Game {
         // this.character.addEventListener("webkitAnimationStart", this.character.jump());
         // this.character.addEventListener("animationstart", this.character.jump());
         // this.character.addEventListener("animationend", this.character.run());
-        // this.character.addEventListener("webkitAnimationEnd",  this.character.run());
-        
+        // this.character.addEventListener("webkitAnimationEnd",  this.character.run());        
     }
 
     inicializeGame() {
@@ -50,6 +51,11 @@ class Game {
         logoGame.style.visibility = 'visible'
         btnKill.style.visibility = 'visible'
         this.showObstacles()      
+    }
+
+    detectedCollision() {
+        this.state = this.character.getState()    
+        setTimeout(this.state , 1100)  
     }
 
     gameOver() {

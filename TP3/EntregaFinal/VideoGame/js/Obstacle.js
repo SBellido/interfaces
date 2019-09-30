@@ -1,4 +1,5 @@
-class Obstacle {    
+class Obstacle {
+
     constructor() {
         this.rock = document.getElementById('obstacleRock')
         this.bomb = document.getElementById('obstacleBomb')
@@ -18,36 +19,37 @@ class Obstacle {
             const obst = this.obstacles[i]
             if(obst == this.rock) {
                 this.rock.className = 'obstacleRock'
+                this.bomb.className = 'hide'
+                this.thorn.className = 'hide'
                 console.log(obst);
             } else if (obst == this.bomb) {
                 this.bomb.className = 'obstacleBomb'
+                this.rock.className = 'hide'
+                this.thorn.className = 'hide'
                 console.log(obst);
-            } else {
+            }  else if (obst == this.thorn) {
                 this.thorn.className = 'obstacleThorn'
+                this.rock.className = 'hide'
+                this.bomb.className = 'hide'
                 console.log(obst);
             }           
         }
         console.log(this.obstacles)        
     }
 
-    hideAllObstacles(){
-        for (let i = 0; i < this.obstacles.length; i++) {
-            const obst = this.obstacles[i]
-            if(obst == this.rock) {
-                this.rock.className = 'hide'
-                console.log(obst);
-            } else if (obst == this.bomb) {
-                this.bomb.className = 'hide'
-                console.log(obst);
-            } else {
-                this.thorn.className = 'hide'
-                console.log(obst);
-            }           
-        }
+    hideAllObstacles(){   
+        this.rock.className = 'hide'
+        this.bomb.className = 'hide'
+        this.thorn.className = 'hide'  
     }
     
+    getpositioObstacle() {
+        setTimeout(this.getPositionAllObstacles, 1100)
+    }
 
-    getPositionObstacle() {
-
+    getPositionAllObstacles() {
+        for (let i = 0; i < this.obstacles.length; i++) {
+            const obst = this.obstacles[i]
+        }
     }
 }
