@@ -3,15 +3,13 @@ class Game {
     constructor() {
         this.character = new Character()
         this.obstacle = new Obstacle()
-        this.collision = false
         // this.obstacles = new Array()
         // this.pushObstacles()
-
     }
 
-    getPositionObstacle() {
-        this.obstacle.getPosition()
-    }
+    // getPositionObstacle() {
+    //     this.obstacle.getPosition()
+    // }
 
     setGame() {
         this.character.motionless()
@@ -21,34 +19,34 @@ class Game {
         fogGreen.className = 'fogGreen'
         text.className = 'text'
     }
-    
-    setGameOver() {
-        logoGame.style.visibility = 'hidden'
-        gameOver.className = 'gameOver'
-        background.className = 'backgroundMotionless' 
-        text.style.visibility = 'visible'
-    }
 
     showObstacle() {
-        setTimeout(this.obstacle.show(), 1900) 
+        this.obstacle.show()
     }
 
-    loopGame() {
+    startGame() {
         this.inicializeGame()
         this.showObstacle()
-        while(!this.collision) {
-            if(this.character.state == 'run') {
-                setTimeout(this.getPositionObstacle(), 17000)
-                if(this.getPositionObstacle() && this.character.state != 'jump' ) {
-                    this.collision = true
-                } else {
-                    this.collision = false 
-                }
-            }
-        }
-        return collision
+        this.loopGame()
     }
     
+    loopGame() {
+        let posCharacter =  this.character.getAbsolutePosition()   
+        let positionInMove = this.obstacle.getAbsolutePosition()
+        // while (positionInMove != posCharacter) {
+
+            setTimeout(this.obstacle.getAbsolutePosition(), 6000)
+              console.log(this.obstacle.getAbsolutePosition())         
+            // if (posCharacter == positionInMove) {
+            //     this.character.dead()
+            //     this.character.state = 'dead'
+            //     this.gameOver == true
+            // } else {
+            //     this.character.state = 'live'
+            // }
+        // }
+    }
+ 
 
     jumpCharacter() {
         this.character.jump()
@@ -56,35 +54,42 @@ class Game {
 
     inicializeGame() {
         this.character.run()
+        this.character.state = 'live'
         background_L1.className = 'background_L1'
         background_L2.className = 'background_L2'
         background_L3.className = 'background_L3'
-        background_L4.className = 'background_L4' 
-        background_L5.className = 'background_L5' 
-        background_L6.className = 'background_L6' 
+        background_L4.className = 'background_L4'
+        background_L5.className = 'background_L5'
+        background_L6.className = 'background_L6'
         btnStart.className = 'hide'
         background.className = 'hide'
         gameOver.className = 'hide'
         text.style.visibility = 'hidden'
         logoGame.style.visibility = 'visible'
         btnKill.style.visibility = 'visible'
-        setTimeout(this.getPositionObstacle(), 1900)
-
     }
 
     detectedCollision() {
-        this.state = this.character.getState()    
-          
+        this.state = this.character.getState()
+
     }
 
+    setGameOver() {
+        logoGame.style.visibility = 'hidden'
+        gameOver.className = 'gameOver'
+        background.className = 'backgroundMotionless'
+        text.style.visibility = 'visible'
+    }
+    
     gameOver() {
         this.character.dead()
         btnStart.className = 'startButton'
         btnStart.classList.add('startButtonOn')
         btnKill.style.visibility = 'hidden'
-        this.obstacle.hideAllObstacles()     
+        this.obstacle.hideAllObstacles()
+        this.character.setState('dead')
         setTimeout(this.setGameOver(), 4000)
-    } 
+    }
 
     // pushObstacles() {
     //     this.obstacles.push(this.obstacle.rock)
@@ -98,47 +103,47 @@ class Game {
     //         if(obst == this.obstacle.thorn) {
     //             this.obstacle.className = 'obstacleThorn'
     //             this.obstacle.show(obst)
-    //         } else if (obst == this.obstacle.bomb) {        
+    //         } else if (obst == this.obstacle.bomb) {
     //             this.obstacle.className = 'obstacleBomb'
     //             this.obstacle.show(obst)
     //         }  else if (obst == this.obstacle.rock){
     //             this.obstacle.className = 'obstacleRock'
     //             this.obstacle.show(obst)
     //         }
-    //     }           
-    //     console.log(this.obstacles)        
+    //     }
+    //     console.log(this.obstacles)
     // }
 
     // showSecuenseRandomObstacles() {
     //     this.secuense = new Array(10).fill(0).map(n => Math.floor(Math.random() * 3 + 1))
-    // }  
+    // }
 
     // transformNumbersInObstacles(generateSecuenseObtacles) {
     //     switch (generateSecuenseObtacles) {
     //         case 0:
     //             return 'obstacleThorn'
-    //         case 1: 
+    //         case 1:
     //             return 'obstacleBomb'
     //         case 2:
     //             return 'obstacleRock'
-    //     }   
+    //     }
     // }
 
     // showSecuenseObstacles() {
     //     for (let i = 0; i < this.secuense; i++) {
     //         const obst = this.transformNumberInObstacles(this.secuense[i])
-    //         console.log(obst);          
+    //         console.log(obst);
     //         setTimeout(() =>this.showObstacle(obst), 100 * i)
     //     }
     // }
 
     // showObstacle(obst) {
-    //     this.obstacles[obst].classList.add('show')            
+    //     this.obstacles[obst].classList.add('show')
     //     setTimeout(() =>this.hiddenObstacle(obst), 10000 * i)
     // }
 
     // hiddenObstacle(obst) {
-    //     this.obstacles[obst].classList.remove('show')            
+    //     this.obstacles[obst].classList.remove('show')
     // }
 
 

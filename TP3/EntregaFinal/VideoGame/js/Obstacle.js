@@ -19,15 +19,20 @@ class Obstacle {
         // this.thorn.className = 'hide'  
     }
 
-    getPosition() {
-        let position = this.rock.getBoundingClientRect() 
-        console.log(position.top, position.right, position.bottom, position.left)
-        if(position.left == 200) {
-            return true
-        } else {
-            return false
-        }
-        // (posicion.top, posicion.right, posicion.bottom, posicion.left
+    // getPosition() {
+    //     let position = this.rock.getBoundingClientRect() 
+    //     console.log(position.top, position.right, position.bottom, position.left)
+    //     if(position.left == 200) {
+    //         return true
+    //     } else {
+    //         return false
+    //     }
+    //     // (posicion.top, posicion.right, posicion.bottom, posicion.left
+    // }
+
+    getAbsolutePosition (){      
+        console.log("Obstacle position in move: "+ this.rock.offsetLeft)        
+        return this.rock.offsetLeft     
     }
 
     getPositionAllObstacles() {

@@ -24,14 +24,12 @@
     // const obstacleRock = document.getElementById('obstacleRock')
     // const obstacleThorn = document.getElementById('obstacleThorn')
     
-    let space = false
     btnStart.onclick = startGame
     btnKill.onclick = callGameOver
-    
+
     document.addEventListener('keydown', function(evt) {
         if (evt.keyCode == 32) {
             detectedEvent()
-            space = true            
         }
     })
 
@@ -43,8 +41,8 @@
     }
 
     function startGame() {
-        game.loopGame()
-        setTimeout(game.getPositionObstacle(), 1900)
+        game.startGame()
+        // setTimeout(game.getPositionObstacle(), 1900)
     }
     
     function detectedEvent() {
