@@ -12,7 +12,6 @@ class Obstacle {
         this.allObstacles.push(this.thorn)
         this.allObstacles.push(this.bomb)
         this.allObstacles.push(this.rock)
-
     }
 
     hideAllObstacles(){   
