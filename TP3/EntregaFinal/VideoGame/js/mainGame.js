@@ -5,6 +5,7 @@
     window.onload = loadedGame
 
     const btnStart = document.getElementById('startButton')
+    const btnBarf = document.getElementById('barfButton')
     const btnKill = document.getElementById('killButton')
     const text = document.getElementById('text')
 
@@ -21,11 +22,12 @@
     const background_L5 = document.getElementById('background_L5')
     const background_L6 = document.getElementById('background_L6')
     const obstacleRock = document.getElementById('obstacleRock')
-    // const obstacleRock = document.getElementById('obstacleRock')
-    // const obstacleThorn = document.getElementById('obstacleThorn')
+    const obstacleBomb = document.getElementById('obstacleRock')
+    const obstacleThorn = document.getElementById('obstacleThorn')
     
     btnStart.onclick = startGame
     btnKill.onclick = callGameOver
+    btnBarf.onclick = callBarf
 
     document.addEventListener('keydown', function(evt) {
         if (evt.keyCode == 32) {
@@ -33,20 +35,20 @@
         }
     })
 
-    
-
     function loadedGame() {
         game.setGame()        
-        // document.onkeydown = detectedEvent
     }
 
     function startGame() {
         game.startGame()
-        // setTimeout(game.getPositionObstacle(), 1900)
     }
     
     function detectedEvent() {
         game.jumpCharacter()
+    }
+
+    function callBarf() {
+        game.barfCharacter()
     }
 
     function callGameOver() {

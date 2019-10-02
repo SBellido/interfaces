@@ -2,35 +2,31 @@ class Obstacle {
 
     constructor() {
         this.rock = document.getElementById('obstacleRock')
-        // this.bomb = document.getElementById('obstacleBomb')
-        // this.thorn = document.getElementById('obstacleThorn')
-        // this.obstacles = new Array()
-        // this.pushObstacles()
+        this.bomb = document.getElementById('obstacleBomb')
+        this.thorn = document.getElementById('obstacleThorn')
+        this.allObstacles = new Array()
+        this.pushObstacles()
     }
 
-    show() {     
-        this.rock.style.visibility = 'visible' 
-        this.rock.className = 'obstacleRock'
-    }
+    pushObstacles() {
+        this.allObstacles.push(this.thorn)
+        this.allObstacles.push(this.bomb)
+        this.allObstacles.push(this.rock)
 
-    hideAllObstacles(){   
-        this.rock.className = 'hide'
-        // this.bomb.className = 'hide'
-        // this.thorn.className = 'hide'  
     }
-
-    // getPosition() {
-    //     let position = this.rock.getBoundingClientRect() 
-    //     console.log(position.top, position.right, position.bottom, position.left)
-    //     if(position.left == 200) {
-    //         return true
-    //     } else {
-    //         return false
-    //     }
-    //     // (posicion.top, posicion.right, posicion.bottom, posicion.left
+ 
+    // show() {     
+    //     this.rock.style.visibility = 'visible' 
+    //     this.rock.className = 'obstacleRock'
     // }
 
-    getAbsolutePosition (){      
+    hideAllObstacles(){   
+        this.thorn.className = 'hide'  
+        this.bomb.className = 'hide'
+        this.rock.className = 'hide'
+    }
+
+    getAbsolutePosition () {      
         console.log("Obstacle position in move: "+ this.rock.offsetLeft)        
         return this.rock.offsetLeft     
     }
@@ -42,26 +38,17 @@ class Obstacle {
         }
     }
 
-    // pushObstacles() {
-    //     this.obstacles.push(this.rock)
-    //     this.obstacles.push(this.bomb)
-    //     this.obstacles.push(this.thorn)
-    // }
-       // showAllObstacles() {
-    //     for (let i = 0; i < this.obstacles.length; i++) {
-    //         let obst = this.obstacles[i]
-    //         if(obst == this.thorn) {
-    //             obst.className = 'obstacleThorn'
-    //             this.show(obst)
-    //         } else if (obst == this.bomb) {        
-    //             obst.className = 'obstacleBomb'
-    //             this.show(obst)
-    //         }  else if (obst == this.rock)
-    //             obst.className = 'obstacleRock'
-    //             this.show(obst)
-    //         }           
-    //     }
-    //     // console.log(this.obstacles)        
-    // }
+    showAllObstacles() {
+        for (let i = 0; i < this.allObstacles.length; i++) {
+            let obst = this.allObstacles[i]
+            if(obst == this.thorn) {
+                this.thorn.className = 'obstacleThorn'
+            } else if (obst == this.bomb) {
+                this.bomb.className = 'obstacleBomb'
+            }  else if (obst == this.rock){
+                this.rock.className = 'obstacleRock'
+            }
+        }
+    }
 
 }

@@ -3,26 +3,26 @@ class Character {
     constructor() {       
         this.character = document.getElementById('character')
         this.state = ''
-        // this.height = character.offsetHeight
-        // this.width = character.offsetWidth
     }
 
     getAbsolutePosition (){ 
-        console.log("character left position: "+  this.character.offsetLeft)        
+        console.log("Character left position: "+  this.character.offsetLeft)        
         return this.character.offsetLeft     
     }
 
     getState() {
         return this.state
     }
+
     setState(state) {
         this.state = state
     }
+
     motionless() {
         this.character.className = 'characterMotionless'
     }
 
-    run(){
+    run() {
         this.character.className = 'characterRun'
     }
     
@@ -33,6 +33,10 @@ class Character {
         } else {
             setTimeout(this.motionless, 1900)
         }
+    }
+
+    barf() {
+        this.character.className = 'characterBarf'
     }
 
     dead() {
