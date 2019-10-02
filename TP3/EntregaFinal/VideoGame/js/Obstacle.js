@@ -14,11 +14,6 @@ class Obstacle {
         this.allObstacles.push(this.rock)
 
     }
- 
-    // show() {     
-    //     this.rock.style.visibility = 'visible' 
-    //     this.rock.className = 'obstacleRock'
-    // }
 
     hideAllObstacles(){   
         this.thorn.className = 'hide'  

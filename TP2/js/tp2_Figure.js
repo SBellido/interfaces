@@ -14,6 +14,10 @@ class Figura {
     //         let finalY = vertex.get_ejeY + distanceY
     //         vertex.set_ejeY(finalY)
     //     }
+<<<<<<< HEAD
+=======
+        
+>>>>>>> gh-pages
     // }
 
     getPolygonCentroid() { 
