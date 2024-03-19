@@ -19,18 +19,18 @@ class Obstacle {
             const obst = this.obstacles[i]
             if(obst == this.rock) {
                 this.rock.className = 'obstacleRock'
-                this.bomb.className = 'hide'
-                this.thorn.className = 'hide'
+                this.bomb.className = 'obstacleBomb'
+                this.thorn.className = 'obstacleThorn'
                 console.log(obst);
             } else if (obst == this.bomb) {
                 this.bomb.className = 'obstacleBomb'
-                this.rock.className = 'hide'
-                this.thorn.className = 'hide'
+                this.rock.className = 'obstacleBomb'
+                this.thorn.className = 'obstacleThorn'
                 console.log(obst);
             }  else if (obst == this.thorn) {
                 this.thorn.className = 'obstacleThorn'
-                this.rock.className = 'hide'
-                this.bomb.className = 'hide'
+                this.rock.className = 'obstacleBomb'
+                this.bomb.className = 'obstacleThorn'
                 console.log(obst);
             }           
         }

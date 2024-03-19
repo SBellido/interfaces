@@ -6,7 +6,7 @@ body {
 }
 
 .conteiner {
-    width: 1728px;
+    width: 100%;
     height: 820px;
     justify-content: center;
     align-items: center;
@@ -154,13 +154,30 @@ body {
     bottom: 5%;
     left: 20%;
     background: url(../images/character/deadZombie.png) no-repeat left center;
+    animation: dead 1.1s steps(8) forwards;
+    z-index: 0;
+}
+
+@keyframes dead {
+    0% { background-position: 0; opacity: 1; }
+    87.5% { opacity: 1; } /* Este porcentaje representa el penúltimo fotograma */
+    100% { background-position: -2183px; opacity: 0; }
+}
+
+/* .characterDead {
+    width: 270px;
+    height: 238px;
+    position: absolute;
+    bottom: 5%;
+    left: 20%;
+    background: url(../images/character/deadZombie.png) no-repeat left center;
     animation: dead 1.1s steps(8);
     z-index: 0;
 }
 @keyframes dead {
     100% { animation: dead 1.1s;
         background-position: -2183px; }
-}
+} */
  
 /*
 .characterWalk {
@@ -280,17 +297,6 @@ body {
     animation: ground 12s linear infinite;
     z-index: -2;
 }
-
-/* .background_L1_no-motion {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: transparent url(../images/background/pruebas/background_1.png);
-    background-size: cover;
-    animation: ground 12s paused infinite;
-    z-index: -2;
-} */
 
 .background_L2 {
     display: flex;

@@ -18,9 +18,9 @@
     const background_L4 = document.getElementById('background_L4')
     const background_L5 = document.getElementById('background_L5')
     const background_L6 = document.getElementById('background_L6')
-    const obstacleRock = document.getElementById('obstacleRock')
-    // const obstacleRock = document.getElementById('obstacleRock')
-    // const obstacleThorn = document.getElementById('obstacleThorn')
+    const obstacleRock = document.getElementById('obstacleBomb')
+    const obstacleBomb = document.getElementById('obstacleRock')
+    const obstacleThorn = document.getElementById('obstacleThorn')
     
     let space = false
     btnStart.onclick = startGame
