@@ -31,6 +31,7 @@ class Character {
     jump() {
         this.character.classList = 'characterJump';
         this.setState('jump');
+        jumpZombie.play();     
         setTimeout(() => this.run(), 1700);
         console.log("salta ", this.state);
     }

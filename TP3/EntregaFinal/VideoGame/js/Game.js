@@ -4,6 +4,8 @@ class Game {
         this.character = new Character();
         this.obstacle = new Obstacle();
         this.gameInterval = null;
+        this.gameStarted = false;
+        this.parallaxMoving = false;
     }
 
     setGame() {     
@@ -14,31 +16,18 @@ class Game {
         gameOver.style.visibility = 'hidden';
         logoGame.className = 'logoGame';
         background.className = 'background';
-        //this.showBackgroundLayer();
         fog.className = 'fog';
         fogGreen.className = 'fogGreen';
-        // clearInterval(this.gameInterval);
     }
-     showBackgroundLayer() {
+
+    showBackgroundLayer() {
         background_L1.style.visibility = 'show';
         background_L2.style.visibility = 'show';
         background_L3.style.visibility = 'show';
         background_L4.style.visibility = 'show';
         background_L5.style.visibility = 'show';
         background_L6.style.visibility = 'show';
-     }
-    
-    // resetGame() {
-    //     // Restablecer todas las configuraciones al estado inicial
-    //     this.obstacle.hideAllObstacles();
-    //     this.character.motionless();
-    //     btnStart.className = 'startButton';
-    //     btnStart.classList.add('startButtonOn');
-    //     btnKill.style.visibility = 'hide';
-    //     this.moveBackground();
-    //     this.gameInterval = null;
-    //     logoGame.style.visibility = 'visible';
-    // }
+    }
 
     showObstacles() {
         this.obstacle.showAllObstacles();
@@ -52,16 +41,21 @@ class Game {
     }
     
     jumpCharacter() {
-        this.character.jump()      
+        if (this.gameStarted) {
+            this.character.jump(); 
+        }
     }
 
     inicializeGame() {
-        console.log("Se inicia el juego");
+        gamingSound.loop = true;
+        gamingSound.play();
+        this.gameStarted = true;
         btnStart.className = 'hide';
         background.className = 'hide';
         gameOver.className = 'hide';
         this.character.run();
         this.moveBackground();
+        this.parallaxMoving ? this.character.run() : this.character.motionless()
         logoGame.style.visibility = 'visible';
         this.showObstacles();    
     }
@@ -87,24 +81,19 @@ class Game {
     }
 
     moveBackground() {
-
         console.log("Fonde se mueve");
+        this.parallaxMoving = true;
         background_L1.className = 'background_L1';
         background_L2.className = 'background_L2';
         background_L3.className = 'background_L3';
         background_L4.className = 'background_L4';
         background_L5.className = 'background_L5';
         background_L6.className = 'background_L6';
-    //     background_L1.classList.add('background_L1_animated');
-    // background_L2.classList.add('background_L2_animated');
-    // background_L3.classList.add('background_L3_animated');
-    // background_L4.classList.add('background_L4_animated');
-    // background_L5.classList.add('background_L5_animated');
-    // background_L6.classList.add('background_L6_animated');
     }
     
     stopBackground() {
         console.log("Fonde se detiene");
+        this.parallaxMoving = false;
         background_L1.style.animationPlayState = 'paused';
         background_L2.style.animationPlayState = 'paused';
         background_L3.style.animationPlayState = 'paused';
@@ -117,6 +106,9 @@ class Game {
         console.log("Game over");
 
         this.character.dead();
+        gamingSound.pause();
+        dead.play();
+
         // btnStart.classList.add('startButtonOn');
         // btnKill.style.visibility = 'hidden';
         this.obstacle.hideAllObstacles();

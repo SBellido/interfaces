@@ -23,6 +23,11 @@
     const obstacleBomb = document.getElementById('obstacleRock');
     const obstacleThorn = document.getElementById('obstacleThorn');
     
+    const previewSound = document.getElementById('previewSound');
+    const gamingSound = document.getElementById('gamingSound');
+    
+    const dead = document.getElementById('dead');
+
     let space = false
     btnStart.onclick = startGame;
     btnKill.onclick = callGameOver;
@@ -35,8 +40,8 @@
     })
 
     function loadedGame() {
-        game.setGame();      
-        // document.onkeydown = detectedEvent
+        game.setGame();    
+        previewSound.play();
     }
 
     function startGame() {
