@@ -25,7 +25,7 @@ body {
     width: 300px;
     height: 199px;
     top: 10%;
-    left: 37%;
+    left: 40%;
     background: transparent url(../src/context/game-over.png) no-repeat center;
     z-index: 4;
 }
@@ -35,7 +35,7 @@ body {
     width: 300px;
     height: 203px;
     top: 10%;
-    left: 37%;
+    left: 40%;
     background: transparent url(../src/context/logoGame.png) no-repeat center;
     z-index: 4;
 }
@@ -55,25 +55,46 @@ body {
     color: white;   
 }
 
+.jumpButtonInactive {
+    opacity: .5;
+    cursor: default !important;
+} 
+
+.jumpButton,
+.jumpButtonInactive,
 .startButton {
     visibility: visible;
     width: 150px;
     height: 150px;
-    justify-content: center;
     position: absolute;
     z-index: 4;
-    background: transparent url(../src/context/playButton.png) no-repeat center;
     border: none;
-    font-weight: 500;
-    font-size: 15px;
+} 
+.startButton {
+    background: transparent url(../src/context/playButton.png) no-repeat center;
     bottom: 45%;
-    left: 42%;
+    left: 45%;
 } 
 
-.startButtonOn:hover {
-    transform: scale(1.25);
-    opacity: .7;
-    border: none;
+.jumpButton,
+.jumpButtonInactive {
+    background: transparent url(../src/context/jumpButton.png) no-repeat center;
+    bottom: 10%;
+    left: 75%;
+} 
+
+
+.jumpButton:hover,
+.startButton:hover {
+    transform: scale(1.1);
+    opacity: .9;
+}
+/* .jumpButtonInactive, .jumpButton, .startButton {
+    outline: none;
+} */
+
+.jumpButtonInactive, .jumpButton, .startButton {
+    user-select: none;
 }
 
 .killButton {
@@ -91,7 +112,7 @@ body {
     left: 42%;
 }
 
-.killButtonOn:hover {
+.killButton:hover {
     transform: scale(1.25);
     opacity: .7;
     color: green;
@@ -326,7 +347,17 @@ body {
     animation: ground 90s linear infinite;
     z-index: -6;
 } 
-
+.background_L6 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent url(../src/background/pruebas/background_6.png) repeat left center;
+    background-size: cover;
+    animation: ground 90s linear infinite;
+    z-index: -7;
+} 
+/* 
 .background_L6 {
     display: flex;
     width: 100%;
@@ -335,7 +366,7 @@ body {
     background: transparent url(../src/background/pruebas/background_6.png);
     background-size: cover;
     z-index: -7;
-}
+} */
 
 
 

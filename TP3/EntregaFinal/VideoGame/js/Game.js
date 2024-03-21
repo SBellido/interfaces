@@ -12,6 +12,7 @@ class Game {
         console.log("Se setea el juego");
         this.character.motionless();
         btnStart.className = 'startButton';
+        btnJump.className = 'jumpButtonInactive';
         logoGame.style.visibility = 'visible';
         gameOver.style.visibility = 'hidden';
         logoGame.className = 'logoGame';
@@ -26,7 +27,7 @@ class Game {
         background_L3.style.visibility = 'show';
         background_L4.style.visibility = 'show';
         background_L5.style.visibility = 'show';
-        background_L6.style.visibility = 'show';
+        obstaclesLayer.style.visibility = 'show';
     }
 
     showObstacles() {
@@ -50,6 +51,7 @@ class Game {
         gamingSound.loop = true;
         gamingSound.play();
         this.gameStarted = true;
+        btnJump.className = 'jumpButton';
         btnStart.className = 'hide';
         background.className = 'hide';
         gameOver.className = 'hide';
@@ -88,7 +90,7 @@ class Game {
         background_L3.className = 'background_L3';
         background_L4.className = 'background_L4';
         background_L5.className = 'background_L5';
-        background_L6.className = 'background_L6';
+        obstaclesLayer.className = 'obstaclesLayer';
     }
     
     stopBackground() {
@@ -99,20 +101,14 @@ class Game {
         background_L3.style.animationPlayState = 'paused';
         background_L4.style.animationPlayState = 'paused';
         background_L5.style.animationPlayState = 'paused';
-        background_L6.style.animationPlayState = 'paused';
+        obstaclesLayer.style.animationPlayState = 'paused';
     }
 
     gameOver() {
         console.log("Game over");
-
         this.character.dead();
         gamingSound.pause();
         dead.play();
-
-        // btnStart.classList.add('startButtonOn');
-        // btnKill.style.visibility = 'hidden';
-        this.obstacle.hideAllObstacles();
-        // clearInterval(this.gameInterval);
         this.stopBackground();
         this.setGameOver();  
     } 
